@@ -1,18 +1,27 @@
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-const HalamanToko = () => {
-    // const router = useRouter();
-    // console.log(router);
-    const { query } = useRouter();
+const halamanToko = () => {
+    
+  // const Router = useRouter();
+  //   const Router = useRouter;
+  //   console.log(Router);
 
-    return (
-        <div>
-            <h1>Halaman Toko</h1>
-            <p>Toko: {query.slug && query.slug[0]+"-"+query.slug[1]}</p>
-             {/* <p>Toko: {Array.isArray(query.slug) ? query.slug.join("-") : query.slug}</p> */}
-            <p>Kategori: {query.slug ? query.slug[0] : "Semua Kategori"}</p>
-        </div>
-    );
+  const { query } = useRouter();
+  const [isLogin, setIsLogin] = useState(false);
+      const{push} = useRouter();
+      useEffect(() => {
+          if(!isLogin){
+              push("/auth/login");
+          }
+      }, []);
+  return (
+    <div>
+      <h1>Halaman Toko</h1>
+      <p>Toko: {`${query.slug && query.slug[0] + "-" + query.slug[1]}`}</p>
+      <p>Kategori: {query.slug ? query.slug[0] : "Semua Kategori"}</p>
+    </div>
+  );
 };
 
-export default HalamanToko;
+export default halamanToko;
