@@ -13,21 +13,21 @@ const MainSection = () => {
     ];
 
     return (
-        <section className={styles.mainSection}>
-            <div className={styles.container}>
-                <h2>List Produk</h2>
-                <div className={styles.productGrid}>
-                    {products.map((product, index) => (
-                        <div key={index} className={styles.productCard}>
-                            <h3>{product.name}</h3>
-                            <p>{product.desc}</p>
-                            <p className={styles.price}>{product.price}</p>
-                        </div>
-                    ))}
-                </div>
+    <section className={`${styles.mainSection} py-10 px-6`}>
+      <div className={`${styles.container} max-w-6xl mx-auto`}>
+        <h2 className="text-2xl font-semibold mb-6">List Produk</h2>
+        <div className={`${styles.productGrid} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6`}>
+          {products.map((product, index) => (
+            <div key={index} className={`${styles.productCard} border p-4 rounded shadow-sm hover:shadow-md transition`}>
+              <h3 className="text-lg font-medium mb-1">{product.name}</h3>
+              <p className="text-gray-700 text-sm">{product.desc}</p>
+              <p className={`${styles.price} font-bold text-gray-900 mt-2`}>{product.price}</p>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default MainSection;
