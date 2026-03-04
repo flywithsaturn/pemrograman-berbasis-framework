@@ -1,0 +1,18 @@
+import Head from 'next/head'
+import Image from 'next/image'
+import { Inter } from 'next/font/google'
+import styles from '@/styles/Home.module.css'
+import Navbar from '@/components/layouts/navbar'
+
+import Link from 'next/link'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Praktikum Next.js</h1> <br />
+      <p>Satrio Wisnu Adi Pratama</p>
+    </div>
+  )
+}
