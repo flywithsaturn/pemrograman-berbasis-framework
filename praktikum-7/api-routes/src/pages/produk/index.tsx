@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 
 type ProductType = {
   id: string;
-  nama: string;
-  harga: number;
-  ukuran: string;
+  name: string;
+  price: number;
+  size: string;
 };
 const kategori = () => {
   // const [isLogin, setIsLogin] = useState(false);
@@ -35,9 +35,9 @@ const kategori = () => {
       <h1>Daftar Produk</h1>
       {products.map((products: ProductType) => (
         <div key={products.id}>
-          <h2>{products.nama}</h2>
-          <p>Harga: {products.harga}</p>
-          <p>Ukuran: {products.ukuran}</p>
+          <h2>{products.name}</h2>
+          <p>price: {products.price}</p>
+          <p>size: {products.size}</p>
         </div>
       ))}
     </div>

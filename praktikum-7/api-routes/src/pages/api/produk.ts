@@ -6,10 +6,10 @@ type Data = {
   status_code: number;
   data: {
     id: number;
-    nama: string;
-    harga: number;
-    ukuran: string;
-    warna: string;
+    name: string;
+    price: number;
+    size: string;
+    color: string;
   }[];
 };
 
@@ -20,17 +20,17 @@ export default function handler(
   const data = [
     {
       id: 1,
-      nama: "Baju",
-      harga: 100000,
-      ukuran: "L",
-      warna: "Hitam",
+      name: "Baju",
+      price: 100000,
+      size: "L",
+      color: "Hitam",
     },
     {
       id: 2,
-      nama: "Celana",
-      harga: 50000,
-      ukuran: "M",
-      warna: "Hitam",
+      name: "Celana",
+      price: 50000,
+      size: "M",
+      color: "Hitam",
     },
   ];
 
