@@ -11,21 +11,34 @@ type ProductType = {
 
 const Kategori = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
+  const fetchProducts = () => {
+    setLoading(true);
+
     fetch("/api/produk")
       .then((response) => response.json())
       .then((responsedata) => {
         setProducts(responsedata.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching produk:", error);
+        setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchProducts();
   }, []);
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Daftar Produk</h1>
+
+      <button className={styles.refreshBtn} onClick={fetchProducts}>
+        {loading ? "Loading..." : "Refresh Data"}
+      </button>
 
       <div className={styles.productGrid}>
         {products.map((product) => (
