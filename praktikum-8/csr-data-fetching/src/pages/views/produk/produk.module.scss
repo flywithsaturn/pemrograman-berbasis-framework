@@ -10,8 +10,8 @@
   }
 
   &__content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
     justify-content: center;
     gap: 24px;
 
